@@ -8,23 +8,37 @@
     <style>
         body {
             font-size: 0;
+            background-color: lightskyblue;
         }
         img {
-            border: 1px solid black;
             width: 200px;
             height: auto;
-            border-collapse: collapse;
+            padding: 10px;
+            
         }
         #jatek {
+            margin: auto;
             width: max-content;
             border: 3px solid white;
+            background-color: wheat;
+            border: 10px solid wheat;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px lightgray;
         }
         #top { 
             border-left: 1px solid black;
             border-right: 1px solid black;
         }
-        #mid { 
+        #balmid { 
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        #mid {
             border: 1px solid black;
+        }
+        #jobbmid { 
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
         }
         #bot { 
             border-left: 1px solid black;
@@ -43,9 +57,9 @@
                         if (x == 2) html += "<img src='O.png' onclick='katt();'>";
                     }
                     else if (csoport == "mid") {
-                        if (x == 0) html += "<img src='O.png' onclick='katt();' id='" + csoport + "'>";
-                        if (x == 1) html += "<img src='O.png' onclick='katt();'>";
-                        if (x == 2) html += "<img src='O.png' onclick='katt();' id='" + csoport + "'>";
+                        if (x == 0) html += "<img src='O.png' onclick='katt();' id='bal" + csoport + "'>";
+                        if (x == 1) html += "<img src='O.png' onclick='katt();' id='" + csoport + "'>";
+                        if (x == 2) html += "<img src='O.png' onclick='katt();' id='jobb" + csoport + "'>";
                     }
                     
                     
