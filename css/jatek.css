@@ -1,0 +1,38 @@
+body {
+    font-size: 0;
+    background-color: lightskyblue;
+}
+img {
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    
+}
+#jatek {
+    margin: auto;
+    width: max-content;
+    border: 3px solid white;
+    background-color: wheat;
+    border: 10px solid wheat;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px lightgray;
+}
+#top { 
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+#balmid { 
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#mid {
+    border: 1px solid black;
+}
+#jobbmid { 
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#bot { 
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
