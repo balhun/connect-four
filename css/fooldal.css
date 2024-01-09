@@ -1,3 +1,13 @@
 body{
-    background-color: aqua;
+    background-color: lightblue;
+}
+#hatter{
+    border: 1px solid grey;
+    text-align: center;
+    box-shadow: 10px 10px grey;
+    width: 550px;
+    background-color: white;
+    padding: 10px;
+    margin: 0px auto;
+
 }
