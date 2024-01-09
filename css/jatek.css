@@ -15,7 +15,7 @@ img {
     background-color: wheat;
     border: 10px solid wheat;
     border-radius: 10px;
-    box-shadow: 10px 10px 5px lightgray;
+    box-shadow: 10px 10px 5px gray;
 }
 #top { 
     border-left: 1px solid black;
