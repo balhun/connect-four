@@ -8,20 +8,28 @@
     <link rel="icon" href="../images/icon.png">
     <link rel="stylesheet" href="../css/jatek.css">
     <script>
+        let tabla = [
+            ["", "", ""],
+            ["", "", ""],
+            ["", "", ""]
+        ];
+        let counter = 0;
+        
         function start() {
+            console.log(tabla);
             let html = "";
             let csoport = "top";
             for (let i = 0; i < 3; i++) {
                 for (let x = 0; x < 3; x++) {
                     if (csoport == "top" || csoport == "bot") {
-                        if (x == 0) html += "<img src='../images/Empty.png' onclick='katt();'>";
-                        if (x == 1) html += "<img src='../images/Empty.png' onclick='katt();' id='" + csoport + "'>";
-                        if (x == 2) html += "<img src='../images/Empty.png' onclick='katt();'>";
+                        if (x == 0) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");'>";
+                        if (x == 1) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");' id='" + csoport + "'>";
+                        if (x == 2) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");'>";
                     }
                     else if (csoport == "mid") {
-                        if (x == 0) html += "<img src='../images/Empty.png' onclick='katt();' id='bal" + csoport + "'>";
-                        if (x == 1) html += "<img src='../images/Empty.png' onclick='katt();' id='" + csoport + "'>";
-                        if (x == 2) html += "<img src='../images/Empty.png' onclick='katt();' id='jobb" + csoport + "'>";
+                        if (x == 0) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");' id='bal" + csoport + "'>";
+                        if (x == 1) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");' id='" + csoport + "'>";
+                        if (x == 2) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");' id='jobb" + csoport + "'>";
                     }
                     
                     
@@ -37,9 +45,10 @@
 <body onload="start();">
     <div id="container">
         <div id="hud">
-            <input type="button" value="">
+            <input type="button" value="Főoldal">
+            <input type="button" value="Záró oldal">
             <span></span>
-            <input type="button" value="">
+            <input type="button" value="Újrakezd">
         </div>
         <div id="jatek"></div>
         
