@@ -1,6 +1,6 @@
 body {
     font-size: 0;
-    background-color: lightskyblue;
+    background-image: url("../images/background.jpg");
 }
 img {
     width: 200px;
@@ -8,8 +8,15 @@ img {
     padding: 10px;
     
 }
+#container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 #jatek {
-    margin: auto;
     width: max-content;
     border: 3px solid white;
     background-color: wheat;

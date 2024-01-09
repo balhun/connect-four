@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
-    <link rel="stylesheet" href="./css/jatek.css">
+    <link rel="stylesheet" href="../css/jatek.css">
     <script>
         function start() {
             let html = "";
@@ -13,14 +13,14 @@
             for (let i = 0; i < 3; i++) {
                 for (let x = 0; x < 3; x++) {
                     if (csoport == "top" || csoport == "bot") {
-                        if (x == 0) html += "<img src='O.png' onclick='katt();'>";
-                        if (x == 1) html += "<img src='O.png' onclick='katt();' id='" + csoport + "'>";
-                        if (x == 2) html += "<img src='O.png' onclick='katt();'>";
+                        if (x == 0) html += "<img src='../images/O.png' onclick='katt();'>";
+                        if (x == 1) html += "<img src='../images/O.png' onclick='katt();' id='" + csoport + "'>";
+                        if (x == 2) html += "<img src='../images/O.png' onclick='katt();'>";
                     }
                     else if (csoport == "mid") {
-                        if (x == 0) html += "<img src='O.png' onclick='katt();' id='bal" + csoport + "'>";
-                        if (x == 1) html += "<img src='O.png' onclick='katt();' id='" + csoport + "'>";
-                        if (x == 2) html += "<img src='O.png' onclick='katt();' id='jobb" + csoport + "'>";
+                        if (x == 0) html += "<img src='../images/O.png' onclick='katt();' id='bal" + csoport + "'>";
+                        if (x == 1) html += "<img src='../images/O.png' onclick='katt();' id='" + csoport + "'>";
+                        if (x == 2) html += "<img src='../images/O.png' onclick='katt();' id='jobb" + csoport + "'>";
                     }
                     
                     
@@ -34,7 +34,7 @@
     </script>
 </head>
 <body onload="start();">
-    <div>
+    <div id="container">
         <div id="hud">
             <input type="button" value="">
             <span></span>
