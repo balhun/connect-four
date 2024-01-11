@@ -8,47 +8,119 @@
     <link rel="icon" href="../images/icon.png">
     <link rel="stylesheet" href="../css/jatek.css">
     <script>
-        let tabla = [
-            ["", "", ""],
-            ["", "", ""],
-            ["", "", ""]
-        ];
-        let counter = 0;
+        let tabla;
+        let counter;
+        let kovetkezo = Math.floor(Math.random()*2);
+        let kovetkezo_betu;
+        let jatek_aktiv;
         
         function start() {
-            console.log(tabla);
+            tabla = ["", "", "", "", "", "", "", "", ""];
+            counter = 0;
+            if (kovetkezo == 0) {
+                kovetkezo_betu = "O";
+            } else {
+                kovetkezo_betu = "X";
+            }
+
+            jatek_aktiv = true;
             let html = "";
             let csoport = "top";
-            for (let i = 0; i < 3; i++) {
+
+            for (let y = 0; y < 3; y++) {
                 for (let x = 0; x < 3; x++) {
-                    if (csoport == "top" || csoport == "bot") {
-                        if (x == 0) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");'>";
-                        if (x == 1) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");' id='" + csoport + "'>";
-                        if (x == 2) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");'>";
+                    if (csoport == "top") {
+                        if (x == 0) html += "<img draggable='false' src='../images/Empty.png' onclick='katt(" + 0 + ", " + "\"baltop\"" + ");' id='baltop'>";
+                        if (x == 1) html += "<img draggable='false' src='../images/Empty.png' onclick='katt(" + 1 + ", " + "\"top\"" + ");' id='" + csoport + "'>";
+                        if (x == 2) html += "<img draggable='false' src='../images/Empty.png' onclick='katt(" + 2 + ", " + "\"jobbtop\"" + ");' id='jobbtop'>";
                     }
                     else if (csoport == "mid") {
-                        if (x == 0) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");' id='bal" + csoport + "'>";
-                        if (x == 1) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");' id='" + csoport + "'>";
-                        if (x == 2) html += "<img src='../images/Empty.png' onclick='katt(" + i + ", " + x + ");' id='jobb" + csoport + "'>";
+                        if (x == 0) html += "<img draggable='false' src='../images/Empty.png' onclick='katt(" + 3 + ", " + "\"balmid\"" + ");' id='balmid'>";
+                        if (x == 1) html += "<img draggable='false' src='../images/Empty.png' onclick='katt(" + 4 + ", " + "\"mid\"" + ");' id='" + csoport + "'>";
+                        if (x == 2) html += "<img draggable='false' src='../images/Empty.png' onclick='katt(" + 5 + ", " + "\"jobbmid\"" + ");' id='jobbmid'>";
+                    } else if (csoport == "bot") {
+                        if (x == 0) html += "<img draggable='false' src='../images/Empty.png' onclick='katt(" + 6 + ", " + "\"balbot\"" + ");' id='balbot'>";
+                        if (x == 1) html += "<img draggable='false' src='../images/Empty.png' onclick='katt(" + 7 + ", " + "\"bot\"" + ");' id='" + csoport + "'>";
+                        if (x == 2) html += "<img draggable='false' src='../images/Empty.png' onclick='katt(" + 8 + ", " + "\"jobbbot\"" + ");' id='jobbbot'>";
                     }
-                    
-                    
+ 
                 }
                 html += "<br>";
-                if (i == 0) csoport = "mid";
-                else if (i == 1) csoport = "bot";
+
+                if (y == 0) csoport = "mid";
+                else if (y == 1) csoport = "bot";
+
                 document.getElementById("jatek").innerHTML = html;
+                document.getElementById("uzenet").innerHTML = "Játék folyamatban, következik az <span>" + kovetkezo_betu + "</span>";
+                document.getElementById("ujrakezd").disabled = true;
             }
         }
+
+        function katt(c, id) {
+                if (tabla[c] == "" && jatek_aktiv == true) {
+                    counter++;
+                    if (kovetkezo == 0) {
+                        tabla[c] = "O";
+                        checkWin();
+                        document.getElementById(id).src = "../images/O.png";
+                        kovetkezo++;
+                        kovetkezo_betu = "X";
+                        if (jatek_aktiv == true) document.getElementById("uzenet").innerHTML = "Játék folyamatban, következik az <span>" + kovetkezo_betu + "</span>";
+                    } else {
+                        tabla[c] = "X";
+                        checkWin();
+                        document.getElementById(id).src = "../images/X.png";
+                        kovetkezo--;
+                        kovetkezo_betu = "O";
+                        if (jatek_aktiv == true) document.getElementById("uzenet").innerHTML = "Játék folyamatban, következik az <span>" + kovetkezo_betu + "</span>";
+                    }
+                }
+            }
+        
+            function checkWin() {
+                if (counter == 9) {
+                    dontetlen();
+                } else if (counter > 4) {
+
+                    //check sor
+                    if (tabla[0] == kovetkezo_betu && tabla[1] == kovetkezo_betu && tabla[2] == kovetkezo_betu) nyert();
+                    if (tabla[3] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[5] == kovetkezo_betu) nyert();
+                    if (tabla[6] == kovetkezo_betu && tabla[7] == kovetkezo_betu && tabla[8] == kovetkezo_betu) nyert();
+
+                    //check oszlop
+                    if (tabla[0] == kovetkezo_betu && tabla[3] == kovetkezo_betu && tabla[6] == kovetkezo_betu) nyert();
+                    if (tabla[1] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[7] == kovetkezo_betu) nyert();
+                    if (tabla[2] == kovetkezo_betu && tabla[5] == kovetkezo_betu && tabla[8] == kovetkezo_betu) nyert();
+
+                    //check kereszt/vissza kereszt
+                    if (tabla[0] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[8] == kovetkezo_betu) nyert();
+                    if (tabla[2] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[6] == kovetkezo_betu) nyert();
+                }
+            }
+
+            function nyert() {
+                console.log("fut a nyert");
+                document.getElementById("uzenet").innerHTML = "Az <span>" + kovetkezo_betu + "</span> nyert!";
+                jatek_aktiv = false;
+                document.getElementById("ujrakezd").disabled = false;
+            }
+            function dontetlen() {
+                console.log("fut a dontetlen");
+                document.getElementById("uzenet").innerHTML = "Döntetlen! Senki nem nyert.";
+                jatek_aktiv = false;
+                document.getElementById("ujrakezd").disabled = false;
+            }
+            
     </script>
 </head>
 <body onload="start();">
     <div id="container">
         <div id="hud">
-            <input type="button" value="Főoldal">
-            <input type="button" value="Záró oldal">
-            <span></span>
-            <input type="button" value="Újrakezd">
+            <input type="button" value="Főoldal" src="../html/fooldal.html">
+            <input type="button" value="Záró oldal" src="../html/Harmadik.html">
+            <input id="ujrakezd" type="button" value="Újrakezd" onclick="start();">
+            <div id="uzenet"></div>
+            
         </div>
         <div id="jatek"></div>
         

@@ -42,3 +42,35 @@ img {
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
+#uzenet {
+    font-size: 20px;
+    color: black;
+    background-color: wheat;
+    margin-top: 10px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+}
+input {
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 100px;
+    background-color: white;
+    box-shadow: 5px 5px 5px lightcyan;
+}
+input:hover:enabled {
+    background-color: lightblue;
+}
+#hud {
+    margin-bottom: 10px;
+}
+#ujrakezd {
+    position: absolute;
+    right: 0px;
+}
+span {
+    font-weight: bold;
+    color: royalblue;
+}
