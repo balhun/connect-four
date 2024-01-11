@@ -51,7 +51,7 @@
                 else if (y == 1) csoport = "bot";
 
                 document.getElementById("jatek").innerHTML = html;
-                document.getElementById("uzenet").innerHTML = "Játék folyamatban, következik az <span>" + kovetkezo_betu + "</span>";
+                document.getElementById("uzenet").innerHTML = "- Játék folyamatban, következik az <span>" + kovetkezo_betu + " bábu</span> -";
                 document.getElementById("ujrakezd").disabled = true;
             }
         }
@@ -65,14 +65,14 @@
                         document.getElementById(id).src = "../images/O.png";
                         kovetkezo++;
                         kovetkezo_betu = "X";
-                        if (jatek_aktiv == true) document.getElementById("uzenet").innerHTML = "Játék folyamatban, következik az <span>" + kovetkezo_betu + "</span>";
+                        if (jatek_aktiv == true) document.getElementById("uzenet").innerHTML = "- Játék folyamatban, következik az <span>" + kovetkezo_betu + " bábu</span> -";
                     } else {
                         tabla[c] = "X";
                         checkWin();
                         document.getElementById(id).src = "../images/X.png";
                         kovetkezo--;
                         kovetkezo_betu = "O";
-                        if (jatek_aktiv == true) document.getElementById("uzenet").innerHTML = "Játék folyamatban, következik az <span>" + kovetkezo_betu + "</span>";
+                        if (jatek_aktiv == true) document.getElementById("uzenet").innerHTML = "- Játék folyamatban, következik az <span>" + kovetkezo_betu + " bábu</span> -";
                     }
                 }
             }
@@ -100,7 +100,7 @@
 
             function nyert() {
                 console.log("fut a nyert");
-                document.getElementById("uzenet").innerHTML = "Az <span>" + kovetkezo_betu + "</span> nyert!";
+                document.getElementById("uzenet").innerHTML = "Az <span>" + kovetkezo_betu + " bábu</span> nyert!";
                 jatek_aktiv = false;
                 document.getElementById("ujrakezd").disabled = false;
             }

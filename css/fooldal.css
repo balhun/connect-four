@@ -1,18 +1,23 @@
 body{
-    background-color: lightblue;
+    background-image: url("../images/background.jpg");
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 #hatter{
-    border: 1px solid grey;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 10px 10px grey;
+    box-shadow: 10px 10px 5px grey;
     width: 550px;
     background-color: white;
     padding: 10px;
     margin: 0px auto;
 }
-a{
-    text-decoration: none;
+input {
+    font-size: 20px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
 }
-a:hover{
-    color: rgb(3, 30, 180);
+input:hover {
+    background-color: lightcyan;
 }

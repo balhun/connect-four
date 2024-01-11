@@ -1,5 +1,7 @@
 body{
-    background-color: lightblue;
+    background-image: url("../images/background.jpg");
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 #igen{
     margin: auto;
@@ -10,24 +12,25 @@ body{
 #linkek{
     margin: auto;
     width: 300px;
-    padding: 10px;
     text-align: center;
 }
-#dsa{
+h1,h2,h3 {
+    text-decoration: underline;
+}
+#container{
+    padding: 10px;
     background-color: white;
     border: 1px solid grey;
-    width: 550px;
+    border-radius: 10px;
+    width: 400px;
     margin: 0px auto;
     box-shadow: 10px 10px 5px grey;
 }
-.links{
-    text-decoration: none;
-    color: black;
+input:hover{
+    background-color: lightcyan;
 }
-.links:hover{
-    color: rgb(3, 30, 180);
-}
-button{
+input{
+    border-radius: 5px;
     padding: 5px;
     margin: 5px;   
     width: 80px; 
