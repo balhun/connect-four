@@ -78,24 +78,22 @@
             }
         
             function checkWin() {
-                if (counter > 4) {
+                //check sor
+                if (tabla[0] == kovetkezo_betu && tabla[1] == kovetkezo_betu && tabla[2] == kovetkezo_betu) nyert();
+                if (tabla[3] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[5] == kovetkezo_betu) nyert();
+                if (tabla[6] == kovetkezo_betu && tabla[7] == kovetkezo_betu && tabla[8] == kovetkezo_betu) nyert();
 
-                    //check sor
-                    if (tabla[0] == kovetkezo_betu && tabla[1] == kovetkezo_betu && tabla[2] == kovetkezo_betu) nyert();
-                    if (tabla[3] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[5] == kovetkezo_betu) nyert();
-                    if (tabla[6] == kovetkezo_betu && tabla[7] == kovetkezo_betu && tabla[8] == kovetkezo_betu) nyert();
+                 //check oszlop
+                 if (tabla[0] == kovetkezo_betu && tabla[3] == kovetkezo_betu && tabla[6] == kovetkezo_betu) nyert();
+                 if (tabla[1] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[7] == kovetkezo_betu) nyert();
+                 if (tabla[2] == kovetkezo_betu && tabla[5] == kovetkezo_betu && tabla[8] == kovetkezo_betu) nyert();
 
-                    //check oszlop
-                    if (tabla[0] == kovetkezo_betu && tabla[3] == kovetkezo_betu && tabla[6] == kovetkezo_betu) nyert();
-                    if (tabla[1] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[7] == kovetkezo_betu) nyert();
-                    if (tabla[2] == kovetkezo_betu && tabla[5] == kovetkezo_betu && tabla[8] == kovetkezo_betu) nyert();
-
-                    //check kereszt/vissza kereszt
-                    if (tabla[0] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[8] == kovetkezo_betu) nyert();
-                    if (tabla[2] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[6] == kovetkezo_betu) nyert();
-                } else if (counter >= 9) {
+                 //check kereszt/vissza kereszt
+                 if (tabla[0] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[8] == kovetkezo_betu) nyert();
+                 if (tabla[2] == kovetkezo_betu && tabla[4] == kovetkezo_betu && tabla[6] == kovetkezo_betu) nyert();
+                if (counter == 9 && jatek_aktiv == true) {
                     dontetlen();
-                } 
+                }
             }
 
             function nyert() {
